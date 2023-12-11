@@ -1,6 +1,9 @@
 import mongoose from 'mongoose'
+import dotenv from 'dotenv'
+dotenv.config()
 
-const dbUrl ="mongodb+srv://hrithik:Hri805120@simplesa.uks0psm.mongodb.net/?retryWrites=true&w=majority"
+
+const dbUrl =process.env.MongoDbURL
 
 const connectdB = async()=>{
    try{
