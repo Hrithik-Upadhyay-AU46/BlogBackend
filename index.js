@@ -1,10 +1,15 @@
 import express from 'express'
 const app = express()
+import dotenv from 'dotenv'
+dotenv.config() 
 import connectdB from './database/db.js'
 import blogRoute from './routes/blogRoutes.js'
 import userRoute from './routes/routes.js'
 import idRoutes from './routes/idRoutes.js'
 import cors from 'cors'
+
+const PORT = process.env.PORT || 8888
+
 app.use(cors())
 app.use(express.json())
 app.use('/',userRoute)
@@ -14,7 +19,7 @@ app.get('/',(req,res)=>{
 res.send('working')
 })
 
-app.listen(8888,()=>{
-    console.log('server started')
+app.listen(PORT,()=>{
+    console.log('server started',PORT)
     connectdB()
 })
