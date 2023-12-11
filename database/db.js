@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 dotenv.config()
-
+mongoose.set("strictQuery", false);
 
 const dbUrl =process.env.MongoDbURL
 
